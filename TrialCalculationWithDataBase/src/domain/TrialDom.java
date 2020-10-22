@@ -18,7 +18,6 @@ public class TrialDom {
 		trialDaoImpl.setDate(date.toString());
 		trialDaoImpl.setcNIC(prospectDaoImpl.getNIC());
 		String input;
-		System.out.print(trialDaoImpl.getcNIC());
 		Scanner s2= new Scanner(System.in);
 		//Loan amount
 		System.out.print("Enter Loan Amount : Rs.");
@@ -103,13 +102,13 @@ public class TrialDom {
 		TrialDaoImpl t2= new TrialDaoImpl();
 		System.out.println("_____________________________________________________________________________________________");
 		System.out.println("| Customer name | Date \t     | Loan Amount | No Of Periouds | Interest Rate | Rentel Amount |");
-		System.out.println("_____________________________________________________________________________________________");
+		System.out.println("|---------------|------------|-------------|----------------|---------------|---------------|");
 		ResultSet result =  t2.select();
 		try {
 			while (result.next()){
 				System.out.println("| "+result.getString(1)+" \t| "+result.getString(2)+" | "+result.getString(3)+"    | "+result.getString(4)+" \t    | "+result.getString(5)+"%2 \t    | "+result.getString(6)+" \t    |");
 			}
-			System.out.println("_____________________________________________________________________________________________");
+			System.out.println("|_______________|____________|_____________|________________|_______________|_______________|");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
